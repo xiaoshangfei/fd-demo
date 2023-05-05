@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "serve:vue2-demo": "lerna run --scope vue2-demo serve --stream "
+  },
+  "devDependencies": {
+    "lerna": "^5.1.0"
+  }
+}
