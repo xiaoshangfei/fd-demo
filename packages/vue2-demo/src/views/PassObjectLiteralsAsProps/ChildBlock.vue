@@ -18,7 +18,7 @@ export default {
     };
   },
   watch: {
-    'obj.a': {
+    obj: {
       handler() {
         this.updateCount++;
       }
