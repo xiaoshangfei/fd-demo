@@ -31,6 +31,7 @@ jobs:
     - run: npm i -g lerna@5.1.0
     - run: npm run bootstrap
     - run: npm run build:vue2-demo --if-present
+    - run: ls packages/vue2-demo
     - name: 自动同步文件夹到服务器
     # You may pin to the exact commit or the version.
     # uses: wangyucode/sftp-upload-action@24f8bb83383dc39bed201ee5da01475e6c38c568
@@ -40,7 +41,7 @@ jobs:
         port: ${{ secrets.SERVER_PORT }} #你的nginx服务器ssh端口
         username: ${{ secrets.USERNAME }} #你的nginx服务器用户名
         password: ${{ secrets.PASSWORD }} #你的nginx服务器密码
-        localDir: "./packages/vue2-demo/dist" #你vue项目build好的文件的路径,每次服务器上会自动删除对应的文件夹后重新覆盖
+        localDir: "packages/vue2-demo/dist" #你vue项目build好的文件的路径,每次服务器上会自动删除对应的文件夹后重新覆盖
         remoteDir: ${{ secrets.SERVER_DESTINATION }} #你要把你build好的文件夹放到nginx服务器上的什么位置
 
     
