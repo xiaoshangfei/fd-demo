@@ -4,10 +4,7 @@
 name: node.js.vue2-demo CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -29,8 +26,7 @@ jobs:
         cache-dependency-path: './packages/vue2-demo/package-lock.json'
     - run: npm i -g lerna@5.1.0
     - run: npm run bootstrap
-    - run: npm run build:vue2-demo --if-present
-    - run: ls /home/runner/work/fd-demo/fd-demo/
+    - run: npm run build:vue2-demo
     - name: 自动同步文件夹到服务器
     # You may pin to the exact commit or the version.
     # uses: wangyucode/sftp-upload-action@24f8bb83383dc39bed201ee5da01475e6c38c568
