@@ -21,7 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: ls -l
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -31,7 +30,7 @@ jobs:
     - run: npm i -g lerna@5.1.0
     - run: npm run bootstrap
     - run: npm run build:vue2-demo --if-present
-    - run: ls packages/vue2-demo
+    - run: ls /home/runner/work/fd-demo/fd-demo/
     - name: 自动同步文件夹到服务器
     # You may pin to the exact commit or the version.
     # uses: wangyucode/sftp-upload-action@24f8bb83383dc39bed201ee5da01475e6c38c568
