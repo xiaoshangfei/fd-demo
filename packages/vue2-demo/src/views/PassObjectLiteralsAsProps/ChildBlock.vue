@@ -9,13 +9,16 @@ export default {
       default: () => null
     }
   },
+  updated() {
+    console.log(`更新了${this.updateCount}次`);
+  },
   data() {
     return {
       updateCount: 0
     };
   },
   watch: {
-    obj: {
+    'obj.a': {
       handler() {
         this.updateCount++;
       }

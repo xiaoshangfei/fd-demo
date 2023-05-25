@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "serve:vue2-demo": "lerna run --scope vue2-demo serve --stream "
+    "serve:vue2-demo": "lerna run --scope vue2-demo serve --stream ",
+    "build:vue2-demo": "lerna run --scope vue2-demo build --stream "
   },
   "devDependencies": {
     "lerna": "^5.1.0"
