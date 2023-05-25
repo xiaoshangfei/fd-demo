@@ -21,12 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - run: ls -l
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: ls -l
     - run: npm i -g lerna@5.1.0
     - run: npm run bootstrap
     - run: npm run build:vue2-demo --if-present
