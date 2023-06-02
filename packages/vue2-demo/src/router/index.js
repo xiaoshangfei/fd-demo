@@ -15,6 +15,12 @@ const routes = [
     name: 'pass-object-literals-as-props',
     meta: { title: 'props传递字面量对象', description: '父组件响应式数据导致子组件重复渲染' },
     component: () => import('@/views/PassObjectLiteralsAsProps')
+  },
+  {
+    path: '/rxjs-axios',
+    name: 'rxjs-axios',
+    meta: { title: 'rxjs封装axios', description: 'rxjs封装axios' },
+    component: () => import('@/views/RxjsAxios')
   }
 ];
 

@@ -6,8 +6,12 @@
 
 <script>
 import '@/global.css';
+import WeatherForecast from '@/api/Modules/WeatherForecast';
 
 export default {
+  provide: {
+    WeatherForecast: WeatherForecast
+  },
   name: 'App',
   components: {},
   data() {
