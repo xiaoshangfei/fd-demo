@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-start items-center w-full py-6 px-32">
+  <div class="flex flex-col justify-start items-center w-full py-6 px-10">
     <input type="text" v-model="msg" class="h-16 w-full rounded-md my-6" />
     <div class="flex justify-between items-center my-6 w-full">
       <label for="">字面量传递</label>
