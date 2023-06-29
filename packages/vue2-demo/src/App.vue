@@ -6,11 +6,11 @@
 
 <script>
 import '@/global.css';
-import WeatherForecast from '@/api/Modules/WeatherForecast';
+import API from '@/api/Modules';
 
 export default {
   provide: {
-    WeatherForecast: WeatherForecast
+    API: API
   },
   name: 'App',
   components: {},

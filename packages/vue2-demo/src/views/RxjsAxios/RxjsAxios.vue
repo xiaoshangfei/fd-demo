@@ -16,20 +16,46 @@
     </div>
   </div>
 </template>
+<!-- eslint-disable no-unused-vars -->
 <script>
+import { fromFetch } from 'rxjs/fetch';
+import { switchMap, of, catchError, retry, throwError } from 'rxjs';
 export default {
-  inject: ['WeatherForecast'],
+  inject: ['API'],
   data() {
     return {
       weatherList: []
     };
   },
   mounted() {
-    this.get();
+    // this.get();
+    this.get2();
   },
   methods: {
     async get() {
-      this.weatherList = await this.WeatherForecast.get();
+      this.weatherList = await this.API.WeatherForecast.get();
+    },
+    async get2() {
+      fromFetch('http://150.158.75.148/api/WeatherForecast/1')
+        .pipe(
+          switchMap((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              return of(response).pipe(
+                switchMap((err) => {
+                  new Error(response.status);
+                  console.log('retry');
+                }),
+                retry(2)
+              );
+            }
+          }),
+          catchError((err) => {
+            return of({ error: true, message: `Error ${err.message}` });
+          })
+        )
+        .subscribe((result) => (this.weatherList = result));
     }
   }
 };
