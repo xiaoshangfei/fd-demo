@@ -21,6 +21,12 @@ const routes = [
     name: 'rxjs-axios',
     meta: { title: 'rxjs封装axios', description: 'rxjs封装axios' },
     component: () => import('@/views/RxjsAxios')
+  },
+  {
+    path: '/array-observable',
+    name: 'array-observable',
+    meta: { title: 'array响应式', description: '数组和对象的响应式' },
+    component: () => import('@/views/ArrayObservable')
   }
 ];
 
